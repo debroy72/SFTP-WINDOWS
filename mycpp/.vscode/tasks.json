@@ -1,0 +1,67 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build sftp_client",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wshadow",
+        "-Wformat=2",
+        "-Wcast-align",
+        "-Wconversion",
+        "-Wsign-conversion",
+        "-Wnull-dereference",
+        "-g3",
+        "-O0",
+        "-c",
+        "${workspaceFolder}/main.cpp",
+        "-o",
+        "${workspaceFolder}/build/Debug/main.o",
+        "-IC:/Users/HP/vcpkg/installed/x64-windows/include",
+        "-LC:/Users/HP/vcpkg/installed/x64-windows/lib"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "detail": "Compile SFTP client using g++ and libssh"
+    },
+    {
+      "label": "link sftp_client",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wshadow",
+        "-Wformat=2",
+        "-Wcast-align",
+        "-Wconversion",
+        "-Wsign-conversion",
+        "-Wnull-dereference",
+        "-g3",
+        "-O0",
+        "${workspaceFolder}/build/Debug/main.o",
+        "-o",
+        "${workspaceFolder}/build/Debug/outDebug.exe",
+        "-lssh",
+        "-lws2_32"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ]
+}
